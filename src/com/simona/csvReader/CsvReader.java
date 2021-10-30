@@ -9,4 +9,8 @@ public class CsvReader {
     public CsvReader(String filename){
         logger = Logger.getLogger("CsvReader");
     }
+
+    public void test() {
+        logger.info("test");
+    }
 }
