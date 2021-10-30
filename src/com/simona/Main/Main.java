@@ -1,4 +1,4 @@
-package com.simona;
+package com.simona.Main;
 
 public class Main {
 
