@@ -48,6 +48,8 @@ public class CsvReader implements ICsvReader {
                 transactionRecords.add(transactionRecord);
             }
         } catch (FileNotFoundException fileNotFoundException) {
+            logger.severe(fileNotFoundException.getMessage());
+
             fileNotFoundException.printStackTrace();
         }
         return transactionRecords;

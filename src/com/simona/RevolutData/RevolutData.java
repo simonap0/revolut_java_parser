@@ -6,7 +6,10 @@ import com.simona.csvReader.ICsvReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Handler;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import java.util.logging.StreamHandler;
 
 public class RevolutData {
 
@@ -17,7 +20,6 @@ public class RevolutData {
 
     public RevolutData(String filename, ICsvReader reader) {
         this.logger = Logger.getLogger("RevolutDataLoader");
-
         this.reader = reader;
         this.sourceFilename = filename;
     }
