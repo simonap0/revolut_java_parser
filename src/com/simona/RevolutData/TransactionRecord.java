@@ -2,12 +2,6 @@ package com.simona.RevolutData;
 
 import java.util.Date;
 
-enum TransactionType {
-    TRANSFER,
-    CARD_PAYMENT,
-    TOPUP
-}
-
 public class TransactionRecord {
     public Date transactionDate;
     public String accountName;
