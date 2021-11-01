@@ -3,6 +3,7 @@ package com.simona.RevolutData;
 import com.simona.csvReader.CsvReader;
 import com.simona.csvReader.ICsvReader;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Logger;
@@ -15,13 +16,14 @@ public class RevolutData {
     final private Logger logger;
 
     public RevolutData(String filename, ICsvReader reader) {
-        this.logger = Logger.getLogger("RevolutDataLoader", RevolutData.class.getName());
+        this.logger = Logger.getLogger("RevolutDataLoader");
 
         this.reader = reader;
         this.sourceFilename = filename;
     }
 
-    public void loadData() {
+    public void loadData() throws ParseException {
+        logger.info("Loading data from file: " + this.sourceFilename);
         ArrayList<TransactionRecord> transactions = reader.readCsv(sourceFilename);
         for (int i = 0; i < transactions.size(); i++) {
             this.addTransaction(i, transactions.get(i));
